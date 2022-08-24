@@ -1,11 +1,17 @@
 <template>
     <footer>
-        <ul v-for="(list, index) in listArray" :key="index">
-            <h3>{{list.title}}</h3>
-            <li v-for="(link, indice) in listArray[index].links" :key="indice">
-                <a href="link.url">{{link.text}}</a>
-            </li>
-        </ul>
+        <section id="upper_footer">
+            <ul v-for="(list, index) in listArray" :key="index">
+                <h3>{{list.title}}</h3>
+                <li v-for="(link, indice) in listArray[index].links" :key="indice">
+                    <a href="link.url">{{link.text}}</a>
+                </li>
+            </ul>
+        </section>
+        <section id="lower_footer">
+            
+        </section>
+
     </footer>
 </template>
 

@@ -22,5 +22,7 @@
 </script>
 
 <style lang="scss">
+ @import './styles/general.scss';
+ @import './styles/vars.scss'
 
 </style>
