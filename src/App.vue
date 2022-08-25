@@ -23,6 +23,6 @@
 
 <style lang="scss">
  @import './styles/general.scss';
- @import './styles/vars.scss'
+ @import './styles/vars.scss';
 
 </style>
