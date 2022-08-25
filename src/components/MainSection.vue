@@ -1,16 +1,18 @@
 <template>
     <main>
         <div class="container">
-            <button></button>
+            <button class="upper-button">CURRENT SERIES</button>
             <div id="catalogue">
                 <div class="card" v-for="(card, index) in comicsArray" :key="index">
+                    <a href="#">
                     <div class="picture">
                         <img :src="card.thumb" alt="">
                     </div>
                     <p>{{card.series}}</p>      
+                    </a>
                 </div>
+                <button class="lower-button">LOAD MORE</button>
             </div>
-            <button></button>
         </div>
     </main>
 </template>
@@ -101,19 +103,52 @@ export default {
 
 <style scoped lang="scss">
 @import '../styles/vars.scss';
-    main{
-    background-color: $main_back_color;
-        #catalogue{
-            display: flex;
-            flex-wrap: wrap;
-                .card{
-                width: calc(100% / 6);
-                height: 250px;
-                    .picture{
-                    overflow: hidden;
-                    height: 185px;
-                    }
-                }
+main{
+background-color: $main_back_color;
+position: relative;
+
+    button{
+    border: none;
+    background-color: $brand_primay_color;
+    color: $primary_text_color;
+    font-weight: bold;
+    }
+    .upper-button{
+    position: relative;
+    top: -26px;
+    padding: 15px 0;
+    font-size: 25px;
+    width: 250px;
+    }
+    #catalogue{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+        .card{
+        width: calc(100% / 6);
+        height: 250px;
+            &:hover p{
+            color: $secondary_text_color;
+            }
+            .picture{
+            overflow: hidden;
+            height: 185px;
+            }
+            p{
+            text-transform: uppercase;
+            font-size: 14px;
+            color: $primary_text_color;
+            display: inline-block ;
+            width: 192px;
+            padding-top: 15px;
+            }
+        }
+        .lower-button{
+        padding: 10px 0;
+        font-size: 12px;
+        width: 185px;
         }
     }
+}
 </style>
