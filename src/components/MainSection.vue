@@ -3,7 +3,12 @@
         <div class="container">
             <button></button>
             <div id="catalogue">
-                
+                <div class="card" v-for="(card, index) in comicsArray" :key="index">
+                    <div class="picture">
+                        <img :src="card.thumb" alt="">
+                    </div>
+                    <p>{{card.series}}</p>      
+                </div>
             </div>
             <button></button>
         </div>
@@ -97,6 +102,18 @@ export default {
 <style scoped lang="scss">
 @import '../styles/vars.scss';
     main{
-        background-color: $main_back_color;
+    background-color: $main_back_color;
+        #catalogue{
+            display: flex;
+            flex-wrap: wrap;
+                .card{
+                width: calc(100% / 6);
+                height: 250px;
+                    .picture{
+                    overflow: hidden;
+                    height: 185px;
+                    }
+                }
+        }
     }
 </style>
