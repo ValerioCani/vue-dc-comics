@@ -49,14 +49,14 @@
                 <button>SIGN-UP NOW!</button>
                 <div>
                     <h3>FOLLOW US</h3>
-                    <!-- <a v-for="(social, index) in iconlist" :key="index" href="icon.url">
-                        <img :src="'@/assets/img/footer-'+ social.icon +'.png'" alt="">
-                    </a> -->
-                    <img src="@/assets/img/footer-facebook.png" alt="">
+                    <a v-for="(social, index) in iconlist" :key="index" href="icon.url">
+                        <img :src="require('@/assets/img/footer-'+ social.icon +'.png')" alt="">
+                    </a>
+                    <!-- <img src="@/assets/img/footer-facebook.png" alt="">
                     <img src="@/assets/img/footer-twitter.png" alt="">
                     <img src="@/assets/img/footer-youtube.png" alt="">
                     <img src="@/assets/img/footer-pinterest.png" alt="">
-                    <img src="@/assets/img/footer-periscope.png" alt="">
+                    <img src="@/assets/img/footer-periscope.png" alt=""> -->
 
                 </div>
             </div>
@@ -217,11 +217,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../styles/vars.scss';
     footer{
         #upper_footer{
         background-image: url('../assets/img/footer-bg.jpg');
+        background-size: cover;
             .container{
             height: 370px;
             overflow: hidden;
@@ -232,7 +233,7 @@ export default {
                 display: flex;
                 color: $primary_text_color;
                     div{
-                    margin: 0 1rem;
+                    margin: 0 2rem 0 0;
                         li{
                         padding: 3px 0 ;
                             &:hover{
