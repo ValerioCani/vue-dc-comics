@@ -3,14 +3,7 @@
         <div class="container">
             <button class="upper-button">CURRENT SERIES</button>
             <div id="catalogue">
-                <div class="card" v-for="(card, index) in comicsArray" :key="index">
-                    <a href="#">
-                    <div class="picture">
-                        <img :src="card.thumb" alt="">
-                    </div>
-                    <p>{{card.series}}</p>      
-                    </a>
-                </div>
+                    <singleProduct v-for="(card, index) in comicsArray" :key="index" :details="card"/>
                 <button class="lower-button">LOAD MORE</button>
             </div>
         </div>
@@ -18,8 +11,12 @@
 </template>
 
 <script>
+import singleProduct from './singleProduct.vue'
 export default {
     name: 'MainSection',
+    components:{
+    singleProduct
+    },
     data(){
         return{
             comicsArray:[
@@ -125,25 +122,6 @@ position: relative;
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
-        .card{
-        width: calc(100% / 6);
-        height: 250px;
-            &:hover p{
-            color: $secondary_text_color;
-            }
-            .picture{
-            overflow: hidden;
-            height: 185px;
-            }
-            p{
-            text-transform: uppercase;
-            font-size: 14px;
-            color: $primary_text_color;
-            display: inline-block ;
-            width: 192px;
-            padding-top: 15px;
-            }
-        }
         .lower-button{
         padding: 10px 0;
         font-size: 12px;
